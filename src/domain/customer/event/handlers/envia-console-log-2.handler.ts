@@ -2,7 +2,7 @@ import EventHandlerInterface from "../../../@shared/event/event-handler.interfac
 import { CustomerCreatedEvent } from "../customer-created.event";
 
 export class EnviaConsoleLog2Handler implements EventHandlerInterface<CustomerCreatedEvent> {
-    handle(event: CustomerCreatedEvent): void {
-      console.log("Esse é o segundo console.log do evento: CustomerCreated");
-    }
+  handle(event: CustomerCreatedEvent): void {
+    console.log("Esse é o segundo console.log do evento: CustomerCreated");
+  }
   }

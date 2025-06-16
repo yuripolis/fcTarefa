@@ -9,16 +9,13 @@ export default class Customer {
   private _address!: Address;
   private _active: boolean = false;
   private _rewardPoints: number = 0;
-  private _eventDispatcher?: EventDispatcher;
-  constructor(id: string, name: string, eventDispatcher?: EventDispatcher) {
+
+
+  constructor(id: string, name: string) {
     this._id = id;
     this._name = name;
     this.validate();
-    this._eventDispatcher = eventDispatcher;
-    if (this._eventDispatcher) {
-      const event = new CustomerCreatedEvent({ id: this._id, name: this._name });
-      this._eventDispatcher.notify(event);
-    }
+
   }
 
   get id(): string {
@@ -53,14 +50,7 @@ export default class Customer {
   
   changeAddress(address: Address) {
     this._address = address;
-    if (this._eventDispatcher) {
-      const event = new CustomerAddressChangedEvent({
-        id: this._id,
-        name: this._name,
-        address: address.toString(), 
-      });
-      this._eventDispatcher.notify(event);
-    }
+
   }
 
   isActive(): boolean {

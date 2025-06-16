@@ -9,5 +9,4 @@ export class CustomerCreatedEvent implements EventInterface {
     this.dateTimeOccurred = new Date();
     this.eventData = data;
   }
-    dataTimeOccurred: Date;
 }
